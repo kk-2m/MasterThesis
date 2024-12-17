@@ -30,7 +30,8 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with: 
           root_file: 01_draft/chapter1/chapter1_v3.tex
-          args: -r .latexmkrc
+          working_directory: 01_draft/chapter1
+          args: -r ../../../.latexmkrc
           post_compile: "latexmk -c"
       
       - name: Rename PDF file # ファイル名競合回避
