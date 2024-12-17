@@ -1,0 +1,66 @@
+
+name: Build LaTeX document
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - m2thesis.tex # TeXファイル名が異なるなら各自変更．以降も複数箇所変更の必要あり．
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      
+      - name: Set Short Sha # 短縮SHAを取得
+        id: short-sha
+        uses: benjlevesque/short-sha@v3.0
+        with:
+          length: 7
+      
+      - name: Get current date and time
+        id: date
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーンを指定
+        run: echo "date=$(date '+%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
+      
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with: 
+          root_file: m2thesis.tex
+          args: -r .latexmkrc
+          post_compile: "latexmk -c"
+      
+      - name: Rename PDF file # ファイル名競合回避
+        run: mv m2thesis.pdf m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+      
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+          zip: false
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
+        with:
+          tag_name: release-${{ env.date }}-${{ steps.short-sha.outputs.sha }}
+          release_name: Release ${{ env.date }} ${{ steps.short-sha.outputs.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Artifact
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_name: m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_content_type: application/pdf

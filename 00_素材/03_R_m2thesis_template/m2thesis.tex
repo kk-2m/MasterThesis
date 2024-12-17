@@ -1,0 +1,79 @@
+% \documentclass[report,a4paper,12pt,nomag]{jsbook} %環境が若干古い場合はこちら。但しabstractの挙動に注意。
+\documentclass[a4paper,11pt,nomag]{jsreport} %2017年2月以降のTeX環境にある。
+
+\usepackage[dvipdfm,truedimen]{geometry}
+\geometry{top=22mm,bottom=22mm,left=22mm,right=22mm}
+%% jsclasses系で文字サイズ11pt や 12pt をクラスオプションに指定すると、
+%% 長さが拡大されるため、nomagオプションを併用している。
+%% https://oku.edu.mie-u.ac.jp/~okumura/jsclasses/ のFAQをよく読むこと。
+
+%\usepackage{layout}
+%\usepackage[utf8]{inputenc} %不要かも
+\usepackage[T1]{fontenc} %utf8フォントエンコーディング指定
+\usepackage{lmodern} % 11pt, nomag を使っているので
+% CloudLaTeX の場合は下の1行を有効にすること
+% \AtBeginDvi{\special{pdf:mapfile ptex-ipaex.map}}
+\usepackage{array}
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}  
+\newcommand{\bvline}[1]{\vrule width #1}
+%\usepackage{opucb4thesis}%%%  卒業論文の場合。
+\usepackage[master]{thesis-sjis}
+% opucb4thesis.sty が同フォルダに必要
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage[dvipdfmx]{graphicx} %dvipdfmx を前提としている
+\usepackage[dvipdfmx]{color}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{here} % 図表の位置決め用
+\usepackage{amsmath,amssymb}% 数式用
+\usepackage{url}      % URL等記載用。\verbより便利
+\usepackage{enumerate}
+\usepackage{midpage}
+
+\begin{document}
+%\layout
+\題目={タイトル}
+\学籍番号={K62xxx}           %%%  学籍番号
+\氏名={県大 太郎}             %%%  氏名
+\提出{6}{1}{29}               %%%  提出年月日の順です．年は令和で．
+\英文題目={英タイトル} %%%  英文のアブストラクトを書く場合．卒業論文ならコメントアウト．
+\英文氏名={Taro Kendai}
+\MakeTitle
+\newpage
+%英文のアブストラクトを書く場合．卒業論文ならコメントアウト．
+\begin{abstract}\hspace{0.5zw}
+
+\end{abstract}
+
+\chapter*{内容梗概}
+\thispagestyle{empty}
+
+hoge
+
+\chapter{序論}
+\setcounter{page}{1}
+
+hoge
+
+\chapter*{謝辞}
+% 主な指導を受けた教員への言葉を最初に書く職位に気をつけること。
+%本研究を進めるにあたり，終始様々な御助言，御指導を頂きました，滝本裕則准教授に深く感謝致します.
+
+% 研究室の他の教員にお世話になったのであれば合わせて書く
+%また，本研究及び本論文執筆の全過程を通じて，
+%様々な面で御協力を頂きました，金川明弘教授に感謝致します.
+
+% 研究室の学生への言葉も書くとよいだろう
+%そして，本研究を通して日頃から御討論，
+%御協力頂いた情報メディア工学研究室の皆様に心より御礼申し上げます.
+
+% ほか，研究を進めるにあたりお世話になった方への感謝を示す
+
+\tocack
+\tocbib
+\begin{thebibliography}{99}
+  % bibitemの例
+  % \bibitem{book1}Koza, J.: {\it Genetic Programming, On the Programming of Computers by means of Narural Selection}, MIT Press（1992）
+
+\end{thebibliography}
+\end{document}

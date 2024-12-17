@@ -1,0 +1,121 @@
+% History
+% 12/06/2024  (岸)	修論下書き用texファイル作成
+% 12/12/2024  (岸)	フォントサイズを11pt, 行間を1.5に設定
+% コンパイルの仕方
+% 		uplatex chapter1_v1.tex
+% 		pbibtex chapter1_v1
+% 		uplatex chapter1_v1.tex
+% 		uplatex chapter1_v1.tex
+% 		dvipdfmx chapter1_v1.dvi
+
+% フォントサイズを11ptに設定
+\documentclass[a4paper,11pt,nomag]{jsreport}
+
+\usepackage[dvipdfm,truedimen]{geometry}
+\geometry{top=22mm,bottom=22mm,left=22mm,right=22mm}
+%% jsclasses系で文字サイズ11pt や 12pt をクラスオプションに指定すると，
+%% 長さが拡大されるため，nomagオプションを併用している．
+%% https://oku.edu.mie-u.ac.jp/~okumura/jsclasses/ のFAQをよく読むこと．
+
+%\usepackage{layout}
+%\usepackage[utf8]{inputenc} %不要かも
+\usepackage[T1]{fontenc} %utf8フォントエンコーディング指定
+\usepackage{lmodern} % 11pt, nomag を使っているので
+% CloudLaTeX の場合は下の1行を有効にすること
+% \AtBeginDvi{\special{pdf:mapfile ptex-ipaex.map}}
+\usepackage{array}
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}  
+\newcommand{\bvline}[1]{\vrule width #1}
+\renewcommand{\baselinestretch}{1.5} % 教授が赤修正を入れやすいように行間を1.5に設定
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage[dvipdfmx]{graphicx} % dvipdfmx を前提としている
+\usepackage[dvipdfmx]{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{bbm}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{here} % 図表の位置決め用
+\usepackage{amsmath,amssymb}% 数式用
+\usepackage{url}      % URL等記載用．\verbより便利
+\usepackage{enumerate}
+\usepackage{midpage}
+
+% サブキャプションのフォーマットを調整
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[subfigure]{labelformat=simple, labelsep=space}
+
+\begin{document}
+
+\chapter*{深層学習を用いた動物分類に関する既存研究}
+
+\setcounter{chapter}{2}
+\section{赤外線画像に対する既存研究}
+
+
+
+% \begin{figure}[tbp]
+%   \centering
+%   \begin{subfigure}[b]{0.45\linewidth}
+%     \centering
+%     \includegraphics[height=0.7\linewidth, keepaspectratio]{cct_color_deer.png}
+%     \caption{可視光画像}
+%     \label{fig:color_deer}
+%   \end{subfigure}
+%   \hfill
+%   \begin{subfigure}[b]{0.45\linewidth}
+%     \centering
+%     \includegraphics[height=0.7\linewidth, keepaspectratio]{cct_infrared_deer.png}
+%     \caption{赤外線画像}
+%     \label{fig:infrared_deer}
+%   \end{subfigure}
+%   \caption{撮影方法の違いによる物体の写り方}
+%   \label{fig:camera}
+% \end{figure}
+
+このような課題を解決するため，少数の赤外線画像を用いた動物分類の研究が行われている \cite{kishimoto2023}．
+しかし，既存研究では，評価時に分類対象となる動物種は全て学習済みであると仮定しているが，実運用において，深層学習モデルを特定の地域に適用する際，モデルが対象地域に生息する全ての動物種を学習しているとは限らない．
+このような状況において，未学習の動物種は学習済みの動物種に強制的に誤分類され，モデルの性能は著しく低下することが知られている．
+この問題はオープンセット問題 (Open-Set Problem) と呼ばれ，この問題に対処するため，学習済みクラスの分類を行いつつ，未学習クラスを検出するオープンセット認識 (Open-Set Recognition，OSR) 手法が提案されている \cite{sun2020, sagar2022}．
+
+さらに近年では，少数データでもオープンセット認識を可能にする Few-Shot Open-Set Recognition (FSOSR) \cite{peeler} が注目を集めている．
+代表的なFSOSR手法として，少数データ学習 (Few-Shot Learning，FSL) 分野で有効な手法とされているメタ学習をOSRに拡張することによりFSLとOSRを同時に実現したPEELER \cite{peeler}や，変換の一貫性に基づき未学習クラスを検出することによって，擬似的な未学習クラスサンプルを必要としないSnaTCHer \cite{snatcher}が挙げられる．
+
+しかし，これらの手法は可視光画像を対象としており，赤外線画像に対して性能評価がなされていない．
+また，FSOSRでは未学習クラスを単一種として扱っているが，未学習クラスのアノテーションや追加学習を考慮すると，実用的には未学習クラスも複数種に分類できることが望ましい．
+
+本論文では，夜間の野生動物モニタリングの実現を目的とした，より実用的な問題設定である「Infrared Few-shot Open-set Recognition (IFOR)」を提案する．
+IFORでは少量の赤外線画像データのみを用いて，特定地域に生息するモデルに学習済みの動物種を正確に分類し，かつ，未学習の動物種の検出を可能にすることを目指す．
+
+加えて，IFORではドメインシフトに対する頑健性の評価も行う．
+ドメインシフトとは，学習データと評価データが異なる地域で収集された場合に生じる課題であり，背景や撮影環境の違い，同じ動物種の地域差による外見の違いによってモデルの性能が低下する現象を指す．
+ドメインシフトを考慮することにより，地理的条件に依存せず，様々な場所に適用可能な汎用性の高いシステムの実現が期待される．
+
+IFORの実現に向けて，赤外線画像に有効な既存手法の特定に加え，既存のFSOSR手法の1つであるメタ学習フレームワークがIFORに対して効果的であるか検証を行う．
+まず，赤外線画像に有効な特徴抽出器を特定するため，テクスチャ特徴に焦点を当てているCNNや，形状特徴 \cite{feature}を重視することで知られている Vision Transformer (ViT) \cite{vit}などの代表的な特徴抽出器の有効性を赤外線画像に対して評価する．
+次に，IFORフレームワーク内のFSLタスクに有効なアプローチの1つである転移学習について検証する．
+転移学習では，事前学習のタスクと本番環境でのタスクの類似度が重要だと考えられている．
+そこで，一般的なImageNetデータセットを用いた事前学習と並行して，事前学習に色情報を持たないフラクタル画像を用いるFormula-Driven Supervised Learning (FDSL) \cite{fdsl}の有効性を探る．
+最後に，赤外線画像を分類する際，小規模データセットから汎用的な特徴抽出を行うための学習戦略であるメタ学習のIFORにおける有効性を，ドメインシフトの条件下で評価する．
+特に，IFORにおいては学習済みクラスの正確な画像分類と未学習クラスの検出が不可欠であるため，メタ学習による有効性を従来の学習方法であるミニバッチ学習と比較する．
+
+さらに，IFORを発展させ，未学習クラスに対する多クラス分類の精度向上にも取り組む．
+% さらに，IFORを発展させ，未学習の動物種を複数クラスに分類する課題にも取り組む．
+特徴空間上で各クラス分布がコンパクトに表現されることによって多クラス分類が容易になると仮定し，クラスタリンに基づく損失関数を用いてクラス内分散の最小化・クラス間分散の最大化を図る．
+クラス内分散の最小化では，異常検知タスクで用いられているk-means損失 \cite{k-means} を導入する．
+クラス間分散の最大化では，k-meansクラスタリングによって得られる各クラスタ中心を利用した損失関数，Between-Class損失 (BC損失) を提案し，性能評価を行う．
+
+以下，第2章では深層学習を用いた動物分類に関する既存研究について述べる．
+第3章では夜間の野生動物モニタリングの実現に向けてより実用的な問題設定を提案し，様々な手法の有用性について述べる．
+第4章では評価実験を行い，その結果及び考察を多面的な方向性から述べる．
+最後に第5章では結論を述べる．
+
+\subsection{Few-Shot Open-Set Recognitionに関する既存研究}
+
+
+
+% ここから参考文献bibtexの設定
+\bibliographystyle{kishiIEEEtr}
+\bibliography{references}
+
+\end{document}

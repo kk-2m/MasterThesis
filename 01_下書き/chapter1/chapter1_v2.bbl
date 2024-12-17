@@ -1,0 +1,134 @@
+\begin{thebibliography}{10}
+
+\bibitem{millennium-ecosystem2005}
+Millennium Assesment and Albert Van~Jaarsveld, {\em Ecosystems and Human
+  Well-Being: Biodiversity Synthesis}.
+\newblock 2005.
+
+\bibitem{cardinale2011}
+Bradley Cardinale, Kristin Matulich, David Hooper, Jarrett Byrnes, J.~Duffy,
+  Lars Gamfeldt, Patricia Balvanera, Mary O'Connor, and Andrew Gonzalez, ``The
+  functional role of producer diversity in ecosystems,'' {\em American journal
+  of botany}, Vol.~98, pp.~572--92, 2011.
+
+\bibitem{newbold2015}
+Tim Newbold, Lawrence Hudson, Samantha Hill, Sara Contu, Igor Lysenko, Rebecca
+  Senior, Luca B^^c3^^b6rger, Dominic Bennett, Argyrios Choimes, Ben Collen,
+  Julie Day, Adriana De~Palma, Sandra Diaz, Susy Echeverria-Londono, Melanie
+  Edgar, Anat Feldman, Morgan Garon, Michelle Harrison, Tamera Alhusseini, and
+  Andy Purvis, ``Global effects of land use on local terrestrial
+  biodiversity,'' {\em Nature}, Vol.~520, pp.~45--50, 2015.
+
+\bibitem{isbell2017}
+Forest Isbell, Andrew Gonzalez, Michel Loreau, Jane Cowles, Sandra Diaz, Andy
+  Hector, David Wardle, Mary O’Connor, J.~Duffy, Lindsay Turnbull, Patrick
+  Thompson, and Anne Larigauderie, ``Linking the influence and dependence of
+  people on biodiversity across scales,'' {\em Nature}, Vol.~546, pp.~65--72,
+  2017.
+
+\bibitem{biodiversity2023}
+環境省,
+  ``生物多様性国家戦略2023-2030～ネイチャーポジディブ実現に向けたロードマップ～,''
+  環境省 自然環境局, 東京, 2023.
+\newblock
+  \url{https://www.biodic.go.jp/biodiversity/about/initiatives6/files/1_2023-2030text.pdf}（2024年12月7日確認）.
+
+\bibitem{jia2022}
+Liang Jia, Ye~Tian, and Junguo Zhang, ``Domain-aware neural architecture search
+  for classifying animals in camera trap images,'' {\em Animals}, Vol.~12,
+  p.~437, 2022.
+
+\bibitem{newey2015}
+Scott Newey, Paul Davidson~G, Sajid Nazir, Gorry Fairhurst, Fabio Verdicchio,
+  Robert Irvine, and Rene van~der Wal, ``Limitations of recreational camera
+  traps for wildlife management and conservation research: A practitioner’s
+  perspective,'' {\em Ambio}, Vol.~44, pp.~624--635, 2015.
+
+\bibitem{zhu2017}
+Chunbiao Zhu, Thomas~H. Li, and Ge~Li, ``Towards automatic wild animal
+  detection in low quality camera-trap images using two-channeled perceiving
+  residual pyramid networks,'' In {\em Proceedings of the }{\em IEEE
+  International Conference on Computer Vision Workshops (ICCVW)},
+  pp.~2860--2864, 2017.
+
+\bibitem{schneider2018}
+Stefan Schneider, Graham~W. Taylor, and Stefan Kremer, ``Deep learning object
+  detection methods for ecological camera trap data,'' In {\em Proceedings of
+  the }{\em 15th Conference on Computer and Robot Vision (CRV)}, pp.~321--328,
+  2018.
+
+\bibitem{carl2020}
+Christin Carl, Fiona Sch^^c3^^b6nfeld, Ingolf Profft, Alisa Klamm, and Dirk
+  Landgraf, ``Automated detection of {European} wild mammal species in camera
+  trap images with an existing and pre-trained computer vision model,'' {\em
+  European Journal of Wildlife Research}, Vol.~66, No.~62, 2020.
+
+\bibitem{tan2022}
+Mengyu Tan, Wentao Chao, Jo-Ku Cheng, Mo~Zhou, Yiwen Ma, Xinyi Jiang, Jianping
+  Ge, Lian Yu, and Limin Feng, ``Animal detection and classification from
+  camera trap images using different mainstream object detection
+  architectures,'' {\em Animals}, Vol.~12, No.~15, 2022.
+
+\bibitem{schneider2020}
+Stefan Schneider, Saul Greenberg, Graham Taylor, and Stefan Kremer, ``Three
+  critical factors affecting automated image species recognition performance
+  for camera traps,'' {\em Ecology and Evolution}, Vol.~10, No.~7,
+  pp.~3503--3517, 2020.
+
+\bibitem{kishimoto2023}
+Koki Kishi, Masako Kishimoto, Sulfayanti Situju, Hironori Takimoto, and Akihiro
+  Kanagawa, ``Few-shot learning for {CNN}-based animal classification in camera
+  traps using an infrared camera,'' In {\em Proceedings of the }{\em 10th IIAE
+  International Conference on Intelligent Systems and Image Processing
+  (ICISIP)}, pp.~11--17, 2023.
+
+\bibitem{sun2020}
+Xin Sun, Zhenning Yang, Chi Zhang, Keck-Voon Ling, and Guohao Peng,
+  ``Conditional gaussian distribution learning for open set recognition,'' In
+  {\em Proceedings of the }{\em IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, pp.~13477--13486, 2020.
+
+\bibitem{sagar2022}
+Sagar Vaze, Kai Han, Andrea Vedaldi, and Andrew Zisserman, ``Open-set
+  recognition: A good closed-set classifier is all you need,'' In {\em
+  Proceedings of the }{\em International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\bibitem{peeler}
+Bo~Liu, Hao Kang, Haoxiang Li, Gang Hua, and Nuno Vasconcelos, ``Few-shot
+  open-set recognition using meta-learning,'' In {\em Proceedings of the }{\em
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~8795--8804, 2020.
+
+\bibitem{snatcher}
+Minki Jeong, Seokeon Choi, and Changick Kim, ``Few-shot open-set recognition by
+  transformation consistency,'' In {\em Proceedings of the }{\em IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~12561--12570, 2021.
+
+\bibitem{feature}
+Shikhar Tuli, Ishita Dasgupta, Erin Grant, and Thomas~L. Griffiths, ``Are
+  convolutional neural networks or transformers more like human vision?,'' {\em
+  arXiv preprint arXiv:2105.07197}, 2021.
+
+\bibitem{vit}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby, ``An image is
+  worth 16x16 words: Transformers for image recognition at scale,'' In {\em
+  Proceedings of the }{\em International Conference on Learning Representations
+  (ICLR)}, 2021.
+
+\bibitem{fdsl}
+Hirokatsu Kataoka, Kazushige Okayasu, Asato Matsumoto, Eisuke Yamagata, Ryosuke
+  Yamada, Nakamasa Inoue, Akio Nakamura, and Yutaka Satoh, ``Pre-training
+  without natural images,'' {\em International Journal of Computer Vision
+  (IJCV)}, 2022.
+
+\bibitem{k-means}
+Chin-Chia Tsai, Tsung-Hsuan Wu, and Shang-Hong Lai, ``Multi-scale patch-based
+  representation learning for image anomaly detection and segmentation,'' In
+  {\em Proceedings of the }{\em IEEE/CVF Winter Conference on Applications of
+  Computer Vision (WACV)}, pp.~3992--4000, 2022.
+
+\end{thebibliography}

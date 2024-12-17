@@ -1,0 +1,49 @@
+This is upBibTeX, Version 0.99d-j0.36-u1.30 (utf8.euc) (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: chapter1_v2.aux
+The style file: kishiIEEEtr.bst
+Database file #1: references.bib
+Warning--empty publisher in millennium-ecosystem2005
+You've used 21 entries,
+            1855 wiz_defined-function locations,
+            594 strings with 8574 characters,
+and the built_in function-call counts, 6755 in all, are:
+= -- 560
+> -- 422
+< -- 0
++ -- 148
+- -- 127
+* -- 557
+:= -- 1007
+add.period$ -- 23
+call.type$ -- 21
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 338
+empty$ -- 568
+format.name$ -- 127
+if$ -- 1580
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 21
+newline$ -- 68
+num.names$ -- 21
+pop$ -- 91
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 215
+stack$ -- 0
+substring$ -- 387
+swap$ -- 141
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 48
+width$ -- 23
+write$ -- 197
+is.kanji.str$ -- 0
+(There was 1 warning)
