@@ -1,4 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{tan2022}
+Mengyu Tan, Wentao Chao, Jo-Ku Cheng, Mo~Zhou, Yiwen Ma, Xinyi Jiang, Jianping
+  Ge, Lian Yu, and Limin Feng, ``Animal detection and classification from
+  camera trap images using different mainstream object detection
+  architectures,'' {\em Animals}, Vol.~12, No.~15, 2022.
+
+\bibitem{tabak2019}
+Michael~A. Tabak, Mohammad~S. Norouzzadeh, David~W. Wolfson, Steven~J. Sweeney,
+  Kurt~C. Vercauteren, Nathan~P. Snow, Joseph~M. Halseth, Paul~A. Di~Salvo,
+  Jesse~S. Lewis, Michael~D. White, Ben Teton, James~C. Beasley, Peter~E.
+  Schlichting, Raoul~K. Boughton, Bethany Wight, Eric~S. Newkirk, Jacob~S.
+  Ivan, Eric~A. Odell, Ryan~K. Brook, Paul~M. Lukacs, Anna~K. Moeller,
+  Elizabeth~G. Mandeville, Jeff Clune, and Ryan~S. Miller, ``Machine learning
+  to classify animal species in camera trap images: Applications in ecology,''
+  {\em Methods in Ecology and Evolution}, Vol.~10, No.~4, pp.~585--590, 2019.
 
 \bibitem{kishimoto2023}
 Koki Kishi, Masako Kishimoto, Sulfayanti Situju, Hironori Takimoto, and Akihiro
