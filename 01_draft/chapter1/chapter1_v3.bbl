@@ -13,11 +13,11 @@ Bradley Cardinale, Kristin Matulich, David Hooper, Jarrett Byrnes, J.~Duffy,
 
 \bibitem{newbold2015}
 Tim Newbold, Lawrence Hudson, Samantha Hill, Sara Contu, Igor Lysenko, Rebecca
-  Senior, Luca B^^c3^^b6rger, Dominic Bennett, Argyrios Choimes, Ben Collen,
-  Julie Day, Adriana De~Palma, Sandra Diaz, Susy Echeverria-Londono, Melanie
-  Edgar, Anat Feldman, Morgan Garon, Michelle Harrison, Tamera Alhusseini, and
-  Andy Purvis, ``Global effects of land use on local terrestrial
-  biodiversity,'' {\em Nature}, Vol.~520, pp.~45--50, 2015.
+  Senior, Luca Börger, Dominic Bennett, Argyrios Choimes, Ben Collen, Julie
+  Day, Adriana De~Palma, Sandra Diaz, Susy Echeverria-Londono, Melanie Edgar,
+  Anat Feldman, Morgan Garon, Michelle Harrison, Tamera Alhusseini, and Andy
+  Purvis, ``Global effects of land use on local terrestrial biodiversity,''
+  {\em Nature}, Vol.~520, pp.~45--50, 2015.
 
 \bibitem{isbell2017}
 Forest Isbell, Andrew Gonzalez, Michel Loreau, Jane Cowles, Sandra Diaz, Andy
@@ -28,7 +28,7 @@ Forest Isbell, Andrew Gonzalez, Michel Loreau, Jane Cowles, Sandra Diaz, Andy
 
 \bibitem{biodiversity2023}
 環境省,
-  ``生物多様性国家戦略2023-2030～ネイチャーポジディブ実現に向けたロードマップ～,''
+  ``生物多様性国家戦略2023-2030〜ネイチャーポジディブ実現に向けたロードマップ〜,''
   環境省 自然環境局, 東京, 2023.
 \newblock
   \url{https://www.biodic.go.jp/biodiversity/about/initiatives6/files/1_2023-2030text.pdf}（2024年12月7日確認）.
@@ -58,10 +58,10 @@ Stefan Schneider, Graham~W. Taylor, and Stefan Kremer, ``Deep learning object
   2018.
 
 \bibitem{carl2020}
-Christin Carl, Fiona Sch^^c3^^b6nfeld, Ingolf Profft, Alisa Klamm, and Dirk
-  Landgraf, ``Automated detection of {European} wild mammal species in camera
-  trap images with an existing and pre-trained computer vision model,'' {\em
-  European Journal of Wildlife Research}, Vol.~66, No.~62, 2020.
+Christin Carl, Fiona Schönfeld, Ingolf Profft, Alisa Klamm, and Dirk Landgraf,
+  ``Automated detection of {European} wild mammal species in camera trap images
+  with an existing and pre-trained computer vision model,'' {\em European
+  Journal of Wildlife Research}, Vol.~66, No.~62, 2020.
 
 \bibitem{tan2022}
 Mengyu Tan, Wentao Chao, Jo-Ku Cheng, Mo~Zhou, Yiwen Ma, Xinyi Jiang, Jianping
@@ -76,9 +76,9 @@ Asmita Manna, Nilam Upasani, Shubham Jadhav, Ruturaj Mane, Rutuja Chaudhari,
   Advanced Computer Science and Applications}, Vol.~14, No.~3, 2023.
 
 \bibitem{mohanty2022}
-Anishka Mohanty, Guillermo Goldsztein, and Rapha^^c3^^abl Pellegrin, ``Fish
-  species image classification using convolutional neural networks,'' {\em
-  Journal of Student Research}, Vol.~11, 2022.
+Anishka Mohanty, Guillermo Goldsztein, and Raphaël Pellegrin, ``Fish species
+  image classification using convolutional neural networks,'' {\em Journal of
+  Student Research}, Vol.~11, 2022.
 
 \bibitem{agarwal2023}
 Nikita Agarwal, Tina Kalita, and Ashwani~Kumar Dubey, ``Classification of
