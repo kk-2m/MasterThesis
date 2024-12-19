@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.8.9)  17 DEC 2024 13:01
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.8.9)  19 DEC 2024 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,7 +328,7 @@ Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/midpage/midpage.sty
 Package: midpage 2009/09/03 v1.1a vertical centering
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 38
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 46
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -346,24 +346,24 @@ File: l3backend-dvips.def 2024-05-08 L3 backend support: dvips
 (./chapter1_v3.aux)
 \openout1 = `chapter1_v3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 *geometry* detected driver: dvipdfm
 *geometry* verbose mode - [ preamble ] result:
@@ -402,36 +402,39 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 25.1917pt on input line 40.
+(Font)              scaled to size 25.1917pt on input line 48.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 25.1917pt on input line 40.
+(Font)              scaled to size 25.1917pt on input line 48.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 25.1917pt on input line 40.
+(Font)              scaled to size 25.1917pt on input line 48.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 25.1917pt on input line 40.
+(Font)              scaled to size 25.1917pt on input line 48.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 4
-0.
+8.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+File: image/cameratrap.png Graphic file (type bmp)
+<image/cameratrap.png>
+
 
 [1
 
 
 ]
-File: cct_color_deer.png Graphic file (type bmp)
-<cct_color_deer.png>
+File: image/cct_color_deer.png Graphic file (type bmp)
+<image/cct_color_deer.png>
 
-Overfull \hbox (15.67116pt too wide) in paragraph at lines 68--69
+Overfull \hbox (15.67116pt too wide) in paragraph at lines 85--86
  [][] 
  []
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.11275pt on input line 69.
+(Font)              scaled to size 9.11275pt on input line 86.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.11275pt on input line 69.
-File: cct_infrared_deer.png Graphic file (type bmp)
-<cct_infrared_deer.png>
+(Font)              scaled to size 9.11275pt on input line 86.
+File: image/cct_infrared_deer.png Graphic file (type bmp)
+<image/cct_infrared_deer.png>
 
 
 [2]
@@ -519,14 +522,18 @@ pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5625 strings out of 474238
- 89967 string characters out of 5743355
+ 5632 strings out of 474238
+ 90149 string characters out of 5743355
  1926802 words of memory out of 5000000
- 28433 multiletter control sequences out of 15000+600000
+ 28439 multiletter control sequences out of 15000+600000
  592778 words of font info for 93 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  67i,7n,77p,453b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chapter1_v3.dvi (8 pages, 25780 bytes).
+Output written on chapter1_v3.dvi (8 pages, 26160 bytes).

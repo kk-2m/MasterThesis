@@ -1,12 +1,12 @@
-This is upBibTeX, Version 0.99d-j0.36-u1.30 (utf8.euc) (TeX Live 2024)
+This is upBibTeX, Version 0.99d-j0.36-u1.30 (utf8.uptex) (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: chapter1_v3.aux
-The style file: kishiIEEEtr.bst
-Database file #1: references.bib
+The style file: ../kishiIEEEtr.bst
+Database file #1: ../references.bib
 Warning--empty publisher in millennium-ecosystem2005
 You've used 25 entries,
             1855 wiz_defined-function locations,
-            614 strings with 9588 characters,
+            614 strings with 9631 characters,
 and the built_in function-call counts, 7795 in all, are:
 = -- 643
 > -- 484
