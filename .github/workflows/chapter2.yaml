@@ -3,9 +3,9 @@ name: Build LaTeX document
 on:
   push:
     branches:
-      - main
+      - chapter2
     paths:
-      - m2thesis.tex # TeXファイル名が異なるなら各自変更．以降も複数箇所変更の必要あり．
+      - 01_draft/chapter2/chapter2_v1.tex # TeXファイル名が異なるなら各自変更．以降も複数箇所変更の必要あり．
 
 jobs:
   build_latex:
@@ -29,25 +29,26 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with: 
-          root_file: m2thesis.tex
-          args: -r .latexmkrc
+          root_file: chapter2_v1.tex
+          working_directory: 01_draft/chapter2
+          args: -r ../../.latexmkrc
           post_compile: "latexmk -c"
       
       - name: Rename PDF file # ファイル名競合回避
-        run: mv m2thesis.pdf m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+        run: mv 01_draft/chapter2/chapter2_v1.pdf 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
       
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+          path: 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
           zip: false
       
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
         with:
           tag_name: release-${{ env.date }}-${{ steps.short-sha.outputs.sha }}
           release_name: Release ${{ env.date }} ${{ steps.short-sha.outputs.sha }}
@@ -58,9 +59,9 @@ jobs:
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
-          asset_name: m2thesis_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_path: ${{ github.workspace }}/01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_name: 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
           asset_content_type: application/pdf

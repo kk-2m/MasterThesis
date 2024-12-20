@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.8.9)  18 DEC 2024 19:16
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.8.9)  20 DEC 2024 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,38 +430,42 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 ]
 
 [2]
+File: image/non_osr.png Graphic file (type bmp)
+<image/non_osr.png>
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 12.15033pt on input line 106.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 12.15033pt on input line 106.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 12.15033pt on input line 106.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 12.15033pt on input line 106.
+
 
 [3]
 
-[4]
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 12.15033pt on input line 159.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 12.15033pt on input line 159.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 12.15033pt on input line 159.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 12.15033pt on input line 159.
- (./chapter2_v1.bbl
+[4] (./chapter2_v1.bbl
 
 [5]
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 10.12527pt on input line 7.
+(Font)              scaled to size 10.12527pt on input line 8.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 10.12527pt on input line 7.
+(Font)              scaled to size 10.12527pt on input line 8.
 LaTeX Font Info:    Font shape `JT2/gt/m/it' in size <10.95001> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 7.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 10.12527pt on input line 7.
+(Font)              scaled to size 10.12527pt on input line 8.
 LaTeX Font Info:    Font shape `JY2/gt/m/it' in size <10.95001> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 7.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 10.12527pt on input line 7.
+(Font)              scaled to size 10.12527pt on input line 8.
 
 
 [6
 
-])
+]
+
+[7])
 
 Package caption Warning: Unused \captionsetup[sub] on input line 35.
 See the caption package documentation for explanation.
@@ -472,7 +476,7 @@ See the caption package documentation for explanation.
 
 
 
-[7] (./chapter2_v1.aux)
+[8] (./chapter2_v1.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2024-06-01> patch level 2
@@ -480,12 +484,12 @@ L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5430 strings out of 474238
- 85891 string characters out of 5743355
- 1927802 words of memory out of 5000000
- 28280 multiletter control sequences out of 15000+600000
+ 5452 strings out of 474238
+ 86309 string characters out of 5743355
+ 1926802 words of memory out of 5000000
+ 28297 multiletter control sequences out of 15000+600000
  589305 words of font info for 83 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 67i,5n,77p,453b,287s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,5n,77p,424b,384s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chapter2_v1.dvi (7 pages, 26660 bytes).
+Output written on chapter2_v1.dvi (8 pages, 25836 bytes).
