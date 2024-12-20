@@ -58,26 +58,26 @@ FUNCTION {output.nonnull}
   output.state mid.sentence =
     { ", " * write$ }
     { output.state after.quote =
-	{ " " * write$ }
-	{ output.state after.block =
-	    { add.period$ write$
-	      newline$
-	      "\newblock " write$
-	    }
-	    { output.state before.all =
-		'write$
-		{ output.state after.quoted.block =
-		    { write$
-		      newline$
-		      "\newblock " write$
-		    }
-		    { add.period$ " " * write$ }
-		  if$
-		}
-	      if$
-	    }
-	  if$
-	}
+        { " " * write$ }
+        { output.state after.block =
+            { add.period$ write$
+              newline$
+              "\newblock " write$
+            }
+            { output.state before.all =
+                'write$
+                { output.state after.quoted.block =
+                    { write$
+                      newline$
+                      "\newblock " write$
+                    }
+                    { add.period$ " " * write$ }
+                  if$
+                }
+              if$
+            }
+          if$
+        }
       if$
       mid.sentence 'output.state :=
     }
@@ -127,8 +127,8 @@ FUNCTION {new.block}
 { output.state before.all =
     'skip$
     { output.state after.quote =
-	{ after.quoted.block 'output.state := }
-	{ after.block 'output.state := }
+        { after.quoted.block 'output.state := }
+        { after.block 'output.state := }
       if$
     }
   if$
@@ -138,8 +138,8 @@ FUNCTION {new.sentence}
 { output.state after.block =
     'skip$
     { output.state before.all =
-	'skip$
-	{ after.sentence 'output.state := }
+        'skip$
+        { after.sentence 'output.state := }
       if$
     }
   if$
@@ -196,7 +196,11 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "{\em " swap$ * "}" * }
+    { duplicate$ is.kanji.str$
+        { }                        % 日本語の場合は何もしない
+        { "{\em " swap$ * "}" * }  % 英語の場合はイタリック体を適用
+      if$
+    }
   if$
 }
 
@@ -215,20 +219,24 @@ FUNCTION {format.names}
       % j: Jr.部分
       % ~: 空白を挿入
       nameptr #1 >            % 2人目以降の著者の場合
-	{ namesleft #1 >            % まだ複数の著者が残っている場合
-	    { ", " * t * }          % カンマで区切る
-	    { numnames #2 >         % 著者が3人以上の場合
-		{ "," * }                 % カンマを追加
-		'skip$
-	      if$
-	      t "others" =
-		{ " {\em et~al.}" * }     % カンマを追加
-		{ " and " * t * }         % それ以外は"and"で結合
-	      if$
-	    }
-	  if$
-	}
-	't
+	      { namesleft #1 >            % まだ複数の著者が残っている場合
+            { ", " * t * }          % カンマで区切る
+            { numnames #2 >         % 著者が3人以上の場合
+                { "," * }                 % カンマを追加
+                'skip$
+              if$
+              t "others" =
+                { " {\em et~al.}" * }     % カンマを追加
+                { s is.kanji.str$
+                    { " " * t * }          % 日本語文献の場合は"and"なし
+                    { " and " * t * }       % 海外文献は"and"で結合
+                  if$
+                }
+              if$
+            }
+          if$
+	      }
+	      't
       if$
       nameptr #1 + 'nameptr :=
       namesleft #1 - 'namesleft :=
@@ -248,8 +256,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-	{ ", eds." * }
-	{ ", ed." * }
+        { ", eds." * }
+        { ", ed." * }
       if$
     }
   if$
@@ -274,21 +282,21 @@ FUNCTION {n.dashify}
   ""
     { t empty$ not }
     { t #1 #1 substring$ "-" =
-	{ t #1 #2 substring$ "--" = not
-	    { "--" *
-	      t #2 global.max$ substring$ 't :=
-	    }
-	    {   { t #1 #1 substring$ "-" = }
-		{ "-" *
-		  t #2 global.max$ substring$ 't :=
-		}
-	      while$
-	    }
-	  if$
-	}
-	{ t #1 #1 substring$ *
-	  t #2 global.max$ substring$ 't :=
-	}
+        { t #1 #2 substring$ "--" = not
+            { "--" *
+              t #2 global.max$ substring$ 't :=
+            }
+            {   { t #1 #1 substring$ "-" = }
+                { "-" *
+                  t #2 global.max$ substring$ 't :=
+                }
+              while$
+            }
+          if$
+        }
+        { t #1 #1 substring$ *
+          t #2 global.max$ substring$ 't :=
+        }
       if$
     }
   while$
@@ -335,8 +343,8 @@ FUNCTION {format.bvolume}
     { "" }
     { "Vol.~" volume *
       series empty$
-	'skip$
-	{ " of " * series emphasize * }
+          'skip$
+          { " of " * series emphasize * }
       if$
       "volume and number" number either.or.check
     }
@@ -346,13 +354,13 @@ FUNCTION {format.bvolume}
 FUNCTION {format.number.series}
 { volume empty$      % volumeが空かチェック
     { number empty$  % volumeが空の場合、numberが空かチェック
-	{ series field.or.null }  % numberも空なら、seriesを返すか空を返す
-	{ { "No.~" number * }
-	  series empty$    % seriesが空かチェック
-	    { "there's a number but no series in " cite$ * warning$ }  % 警告
-	    { " In " * series * }  % "In シリーズ名"を連結
-	  if$
-	}
+        { series field.or.null }  % numberも空なら、seriesを返すか空を返す
+        { { "No.~" number * }
+          series empty$    % seriesが空かチェック
+            { "there's a number but no series in " cite$ * warning$ }  % 警告
+            { " In " * series * }  % "In シリーズ名"を連結
+          if$
+        }
       if$
     }
     { "" }  % volumeがある場合はから文字を返す
@@ -380,8 +388,8 @@ FUNCTION {multi.page.check}
       swap$ duplicate$ "," =
       swap$ "+" =
       or or
-	{ #1 'multiresult := }
-	{ t #2 global.max$ substring$ 't := }
+        { #1 'multiresult := }
+        { t #2 global.max$ substring$ 't := }
       if$
     }
   while$
@@ -392,8 +400,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-	{ "pp.~" pages n.dashify * }
-	{ "p.~" pages * }
+        { "pp.~" pages n.dashify * }
+        { "p.~" pages * }
       if$
     }
   if$
@@ -417,12 +425,12 @@ FUNCTION {format.chapter.pages}
 { chapter empty$
     'format.pages
     { type empty$
-	{ "ch.~" chapter * }
-	{ type "l" change.case$ chapter tie.or.space.connect }
+        { "ch.~" chapter * }
+        { type "l" change.case$ chapter tie.or.space.connect }
       if$
       pages empty$
-	'skip$
-	{ ", " * format.pages * }
+        'skip$
+        { ", " * format.pages * }
       if$
     }
   if$
@@ -432,9 +440,9 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$     % booktitleが空かチェック
     { "" }             % 空ならから文字を返す
     { "In " "Proceedings of the " emphasize * booktitle emphasize *  % "in "の後に"Proceedings of the "とbooktitleをイタリック表示
-      editor empty$    % editorが空かチェック
-	'skip$               % 空なら何もしない
-	{ " (" * format.editors * ")" * }  % エディタ情報を括弧付きで追加
+      editor empty$          % editorが空かチェック
+        'skip$               % 空なら何もしない
+        { " (" * format.editors * ")" * }  % エディタ情報を括弧付きで追加
       if$
     }
   if$
@@ -445,8 +453,8 @@ FUNCTION {format.thesis.type}
     'skip$
     { pop$
       output.state after.block =
-	{ type "t" change.case$ }
-	{ type "l" change.case$ }
+        { type "t" change.case$ }
+        { type "l" change.case$ }
       if$
     }
   if$
@@ -476,8 +484,8 @@ FUNCTION {format.addr.pub}
 { publisher empty$
     { "" }
     { address empty$
-	{ "" }
-	{ address ": " * }
+        { "" }
+        { address ": " * }
       if$
       publisher *
     }
@@ -494,11 +502,11 @@ FUNCTION {format.paddress}
 FUNCTION {format.article.crossref}
 { key empty$
     { journal empty$
-	{ "need key or journal for " cite$ * " to crossref " * crossref *
-	  warning$
-	  ""
-	}
-	{ "in {\em " journal * "\/}" * }
+        { "need key or journal for " cite$ * " to crossref " * crossref *
+          warning$
+          ""
+        }
+        { "in {\em " journal * "\/}" * }
       if$
     }
     { "in " key * }
@@ -512,12 +520,12 @@ FUNCTION {format.crossref.editor}
   #2 >
     { pop$ " {\em et~al.}" * }
     { #2 <
-	'skip$
-	{ editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
-	    { " {\em et~al.}" * }
-	    { " and " * editor #2 "{vv~}{ll}" format.name$ * }
-	  if$
-	}
+        'skip$
+        { editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
+            { " {\em et~al.}" * }
+            { " and " * editor #2 "{vv~}{ll}" format.name$ * }
+          if$
+        }
       if$
     }
   if$
@@ -536,15 +544,15 @@ FUNCTION {format.book.crossref}
   editor field.or.null author field.or.null =
   or
     { key empty$
-	{ series empty$
-	    { "need editor, key, or series for " cite$ * " to crossref " *
-	      crossref * warning$
-	      "" *
-	    }
-	    { "{\em " * series * "\/}" * }
-	  if$
-	}
-	{ key * }
+        { series empty$
+            { "need editor, key, or series for " cite$ * " to crossref " *
+              crossref * warning$
+              "" *
+            }
+            { "{\em " * series * "\/}" * }
+          if$
+        }
+        { key * }
       if$
     }
     { format.crossref.editor * }
@@ -557,15 +565,15 @@ FUNCTION {format.incoll.inproc.crossref}
   editor field.or.null author field.or.null =
   or
     { key empty$
-	{ booktitle empty$
-	    { "need editor, key, or booktitle for " cite$ * " to crossref " *
-	      crossref * warning$
-	      ""
-	    }
-	    { "in {\em " booktitle * "\/}" * }
-	  if$
-	}
-	{ "in " key * }
+        { booktitle empty$
+            { "need editor, key, or booktitle for " cite$ * " to crossref " *
+              crossref * warning$
+              ""
+            }
+            { "in {\em " booktitle * "\/}" * }
+          if$
+        }
+        { "in " key * }
       if$
     }
     { "in " format.crossref.editor * }
@@ -582,8 +590,8 @@ FUNCTION {article}
     { journal emphasize "journal" output.check
       format.volume output
       month empty$
-	{ format.number output }
-	'skip$
+        { format.number output }
+        'skip$
       if$
       format.pages output
       format.date "year" output.check
@@ -603,8 +611,8 @@ FUNCTION {book}
     { format.editors "author and editor" output.check }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
-	'skip$
+        { "author and editor" editor either.or.check }
+        'skip$
       if$
     }
   if$
@@ -636,8 +644,8 @@ FUNCTION {booklet}
     { howpublished empty$ not
       address empty$ month empty$ year empty$ and and
       or
-	{ format.title.p output.nonnull }
-	{ format.title output.nonnull }
+        { format.title.p output.nonnull }
+        { format.title output.nonnull }
       if$
       blank.sep
     }
@@ -656,8 +664,8 @@ FUNCTION {inbook}
     { format.editors "author and editor" output.check }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
-	'skip$
+        { "author and editor" editor either.or.check }
+        'skip$
       if$
     }
   if$
@@ -734,10 +742,10 @@ FUNCTION {manual}
 { output.bibitem
   author empty$
     { organization empty$
-	'skip$
-	{ organization output.nonnull
-	  address output
-	}
+        'skip$
+        { organization output.nonnull
+          address output
+        }
       if$
     }
     { format.authors output.nonnull }
@@ -745,10 +753,10 @@ FUNCTION {manual}
   format.btitle "title" output.check
   author empty$
     { organization empty$
-	{ address new.block.checka
-	  address output
-	}
-	'skip$
+        { address new.block.checka
+          address output
+        }
+        'skip$
       if$
     }
     { organization address new.block.checkb
@@ -785,8 +793,8 @@ FUNCTION {misc}
     { howpublished empty$ not
       month empty$ year empty$ and
       or
-	{ format.title.p output.nonnull }
-	{ format.title output.nonnull }
+        { format.title.p output.nonnull }
+        { format.title output.nonnull }
       if$
       blank.sep
     }
