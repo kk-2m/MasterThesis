@@ -4,9 +4,9 @@ The top-level auxiliary file: chapter2_v1.aux
 The style file: ../kishiIEEEtr.bst
 Database file #1: ../references.bib
 You've used 14 entries,
-            1855 wiz_defined-function locations,
-            559 strings with 7820 characters,
-and the built_in function-call counts, 4869 in all, are:
+            1868 wiz_defined-function locations,
+            561 strings with 7830 characters,
+and the built_in function-call counts, 4895 in all, are:
 = -- 365
 > -- 378
 < -- 0
@@ -22,7 +22,7 @@ cite$ -- 14
 duplicate$ -- 219
 empty$ -- 370
 format.name$ -- 117
-if$ -- 1111
+if$ -- 1124
 int.to.chr$ -- 0
 int.to.str$ -- 14
 missing$ -- 14
@@ -44,4 +44,4 @@ warning$ -- 0
 while$ -- 35
 width$ -- 16
 write$ -- 140
-is.kanji.str$ -- 0
+is.kanji.str$ -- 13
