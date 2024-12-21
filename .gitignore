@@ -6,6 +6,7 @@
 *.log
 *.out
 *.toc
+*.fls
 *.synctex.gz
 *.dvi
 *_v[0-9]*.pdf
