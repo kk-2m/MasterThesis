@@ -11,6 +11,8 @@
 %   12/06/2024  (岸)	ieeetrをvol.やno.を大文字表記に変更
 % 										format.in.ed.booktitleで"In Proceedings of the "の表記を追加
 % 										format.namesでfirst nameの略記をフルネーム表示に変更
+%   12/20/2024  (岸)	emphasizeで日本語の場合に太字にしないように修正
+% 										format.namesで日本語の場合はandで繋がないように修正
 
 ENTRY
   { address
