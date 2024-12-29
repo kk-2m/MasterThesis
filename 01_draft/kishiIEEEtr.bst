@@ -8,11 +8,13 @@
 %    9/30/1985	(HWT)	Original version, by Howard Trickey.
 %    1/29/1988	(OP&HWT) Updated for BibTeX version 0.99a, Oren Patashnik;
 %			THIS `ieeetr' VERSION DOES NOT WORK WITH BIBTEX 0.98i.
-%   12/06/2024  (岸)	ieeetrをvol.やno.を大文字表記に変更
+%		12/06/2024	(岸)	ieeetrをvol.やno.を大文字表記に変更
 % 										format.in.ed.booktitleで"In Proceedings of the "の表記を追加
 % 										format.namesでfirst nameの略記をフルネーム表示に変更
-%   12/20/2024  (岸)	emphasizeで日本語の場合に太字にしないように修正
+%		12/20/2024	(岸)	emphasizeで日本語の場合に太字にしないように修正
 % 										format.namesで日本語の場合はandで繋がないように修正
+%		12/22/2024	(岸)	format.arXive関数を作成
+% 										@miscでarXiveに対応
 
 ENTRY
   { address
@@ -37,6 +39,8 @@ ENTRY
     type
     volume
     year
+    archivePrefix
+    eprint
   }
   {}
   { label }
@@ -583,6 +587,21 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
+FUNCTION {format.arxiv}
+{ eprint empty$
+    { "" }
+    { archivePrefix empty$
+        { "arXiv:" eprint * }
+        { archivePrefix "arXiv" =
+            { "arXiv preprint arXiv:" eprint * }
+            { archivePrefix ":" * eprint * }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -789,24 +808,14 @@ FUNCTION {mastersthesis}
 
 FUNCTION {misc}
 { output.bibitem
-  format.authors output
-  title empty$
-    { howpublished new.sentence.checka }
-    { howpublished empty$ not
-      month empty$ year empty$ and
-      or
-        { format.title.p output.nonnull }
-        { format.title output.nonnull }
-      if$
-      blank.sep
-    }
-  if$
-  howpublished output
-  format.date output
+  format.authors "author" output.check
+  format.title "title" output.check
+  blank.sep
+  format.arxiv emphasize output
+  format.date "year" output.check
   new.block
   note output
   fin.entry
-  empty.misc.check
 }
 
 FUNCTION {phdthesis}
