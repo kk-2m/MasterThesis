@@ -11,3 +11,4 @@
 *.dvi
 *_v[0-9]*.pdf
 texput.log
+02_form/
