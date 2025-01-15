@@ -814,6 +814,7 @@ FUNCTION {misc}
   format.arxiv emphasize output
   format.date "year" output.check
   new.block
+  howpublished output
   note output
   fin.entry
 }
@@ -862,6 +863,7 @@ FUNCTION {techreport}
   address output
   format.date "year" output.check
   new.block
+  howpublished output
   note output
   fin.entry
 }
