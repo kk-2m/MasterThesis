@@ -1,21 +1,21 @@
 @MISC{protonet,
-      title={Prototypical Networks for Few-shot Learning}, 
-      author={Jake Snell and Kevin Swersky and Richard S. Zemel},
-      year={2017},
-      eprint={1703.05175},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/1703.05175}, 
+  title={Prototypical Networks for Few-shot Learning}, 
+  author={Jake Snell and Kevin Swersky and Richard S. Zemel},
+  year={2017},
+  eprint={1703.05175},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/1703.05175}, 
 }
 
 % ViTとCNNが重視する特徴
 @MISC{feature,
-    title={Are Convolutional Neural Networks or Transformers more like human vision?},
-    author={Shikhar Tuli and Ishita Dasgupta and Erin Grant and Thomas L. Griffiths},
-    year={2021},
-    eprint={2105.07197},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+  title={Are Convolutional Neural Networks or Transformers more like human vision?},
+  author={Shikhar Tuli and Ishita Dasgupta and Erin Grant and Thomas L. Griffiths},
+  year={2021},
+  eprint={2105.07197},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
 }
 
 % OSR
@@ -30,13 +30,21 @@
 
 % CLIP
 @MISC{clip,
-      title={Learning Transferable Visual Models From Natural Language Supervision}, 
-      author={Alec Radford and Jong Wook Kim and Chris Hallacy and Aditya Ramesh and Gabriel Goh and Sandhini Agarwal and Girish Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and Ilya Sutskever},
-      year={2021},
-      eprint={2103.00020},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2103.00020}, 
+  title={Learning Transferable Visual Models From Natural Language Supervision}, 
+  author={Alec Radford and Jong Wook Kim and Chris Hallacy and Aditya Ramesh and Gabriel Goh and Sandhini Agarwal and Girish Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and Ilya Sutskever},
+  year={2021},
+  eprint={2103.00020},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2103.00020}, 
+}
+
+% WCS
+@MISC{wcs,
+  author={Wildlife Conservation Society},
+  title = {{WCS Camera Traps}},
+  howpublished = {\url{https://lila.science/datasets/wcscameratraps}},
+  note = {Labeled Information Library of Alexandria: Biology and Conservation (LILA BC) (2025年1月8日閲覧)}
 }
 
 % 生態系サービス
@@ -56,7 +64,8 @@
   month        = {3},
   address      = {東京},
   institution  = {環境省 自然環境局},
-  note         = {\url{https://www.biodic.go.jp/biodiversity/about/initiatives6/files/1_2023-2030text.pdf}（2024年12月7日確認）},
+  howpublished = {\url{https://www.biodic.go.jp/biodiversity/about/initiatives6/files/1_2023-2030text.pdf}},
+  note         = {生物多様性センター(2024年12月7日閲覧)},
   language     = {japanese}
 }
 
@@ -517,6 +526,22 @@ url={https://openreview.net/forum?id=5hLP5JY9S2d}
   pages={770-778},
   keywords={Training;Degradation;Complexity theory;Image recognition;Neural networks;Visualization;Image segmentation},
   doi={10.1109/CVPR.2016.90}
+}
+
+% DeiT
+@INPROCEEDINGS{deit,
+  title = 	 {Training data-efficient image transformers \& distillation through attention},
+  author =       {Touvron, Hugo and Cord, Matthieu and Douze, Matthijs and Massa, Francisco and Sablayrolles, Alexandre and Jegou, Herve},
+  booktitle = 	 {38th International Conference on Machine Learning (ICML)},
+  pages = 	 {10347--10357},
+  year = 	 {2021},
+  editor = 	 {Meila, Marina and Zhang, Tong},
+  volume = 	 {139},
+  month = 	 {18--24 Jul},
+  publisher =    {Proceedings of Machine Learning Research (PMLR)},
+  pdf = 	 {http://proceedings.mlr.press/v139/touvron21a/touvron21a.pdf},
+  url = 	 {https://proceedings.mlr.press/v139/touvron21a.html},
+  abstract = 	 {Recently, neural networks purely based on attention were shown to address image understanding tasks such as image classification. These high-performing vision transformers are pre-trained with hundreds of millions of images using a large infrastructure, thereby limiting their adoption. In this work, we produce competitive convolution-free transformers trained on ImageNet only using a single computer in less than 3 days. Our reference vision transformer (86M parameters) achieves top-1 accuracy of 83.1% (single-crop) on ImageNet with no external data. We also introduce a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention, typically from a convnet teacher. The learned transformers are competitive (85.2% top-1 acc.) with the state of the art on ImageNet, and similarly when transferred to other tasks. We will share our code and models.}
 }
 
 % CCT
