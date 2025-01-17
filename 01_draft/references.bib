@@ -97,6 +97,18 @@
   doi = {10.1038/nature22899}
 }
 
+% YOLO-V5
+@article{yolov5,
+  author = {Fang, Yiming and Guo, Xianxin and Chen, Kun and Zhou, Zhu and Ye, Qing},
+  year = {2021},
+  month = {06},
+  pages = {5390-5406},
+  title = {Accurate and automated detection of surface knots on sawn timbers using YOLO-V5 model},
+  volume = {16},
+  journal = {BioResources},
+  doi = {10.15376/biores.16.3.5390-5406}
+}
+
 % 生態系サービス
 @ARTICLE{cardinale2011,
 author = {Cardinale, Bradley and Matulich, Kristin and Hooper, David and Byrnes, Jarrett and Duffy, J. and Gamfeldt, Lars and Balvanera, Patricia and O'Connor, Mary and Gonzalez, Andrew},
@@ -319,6 +331,69 @@ doi = {10.3732/ajb.1000364}
   doi={10.1109/TPAMI.2020.2981604}
 }
 
+% CNN
+@ARTICLE{mohanty2016,
+  AUTHOR={Mohanty, Sharada P.  and Hughes, David P.  and Salathé, Marcel },
+  TITLE={Using Deep Learning for Image-Based Plant Disease Detection},
+  JOURNAL={Frontiers in Plant Science},
+  VOLUME={7},
+  YEAR={2016},
+  URL={https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2016.01419},
+  DOI={10.3389/fpls.2016.01419},
+  ISSN={1664-462X},
+  ABSTRACT={<p>Crop diseases are a major threat to food security, but their rapid identification remains difficult in many parts of the world due to the lack of the necessary infrastructure. The combination of increasing global smartphone penetration and recent advances in computer vision made possible by deep learning has paved the way for smartphone-assisted disease diagnosis. Using a public dataset of 54,306 images of diseased and healthy plant leaves collected under controlled conditions, we train a deep convolutional neural network to identify 14 crop species and 26 diseases (or absence thereof). The trained model achieves an accuracy of 99.35% on a held-out test set, demonstrating the feasibility of this approach. Overall, the approach of training deep learning models on increasingly large and publicly available image datasets presents a clear path toward smartphone-assisted crop disease diagnosis on a massive global scale.</p>}
+}
+
+% CNN
+@ARTICLE{sue2020,
+  title = {New perspectives on plant disease characterization based on deep learning},
+  journal = {Computers and Electronics in Agriculture},
+  volume = {170},
+  pages = {105220},
+  year = {2020},
+  issn = {0168-1699},
+  doi = {https://doi.org/10.1016/j.compag.2020.105220},
+  url = {https://www.sciencedirect.com/science/article/pii/S0168169919300560},
+  author = {Sue Han Lee and Hervé Goëau and Pierre Bonnet and Alexis Joly},
+  keywords = {Plant diseases, Automated visual crops analysis, Deep learning, Transfer learning},
+  abstract = {The control of plant diseases is a major challenge to ensure global food security and sustainable agriculture. Several recent studies have proposed to improve existing procedures for early detection of plant diseases through modern automatic image recognition systems based on deep learning. In this article, we study these methods in detail, especially those based on convolutional neural networks. We first examine whether it is more relevant to fine-tune a pre-trained model on a plant identification task rather than a general object recognition task. In particular, we show, through visualization techniques, that the characteristics learned differ according to the approach adopted and that they do not necessarily focus on the part affected by the disease. Therefore, we introduce a more intuitive method that considers diseases independently of crops, and we show that it is more effective than the classic crop-disease pair approach, especially when dealing with disease involving crops that are not illustrated in the training database. This finding therefore encourages future research to rethink the current de facto paradigm of crop disease categorization.}
+}
+
+% AlexNet
+@INPROCEEDINGS{alexnet,
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {F. Pereira and C.J. Burges and L. Bottou and K.Q. Weinberger},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf},
+ volume = {25},
+ year = {2012}
+}
+
+% FCOS
+@INPROCEEDINGS{fcos,
+  author = {Tian, Zhi and Shen, Chunhua and Chen, Hao and He, Tong},
+  title = {FCOS: Fully Convolutional One-Stage Object Detection},
+  booktitle = {IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month = {October},
+  year = {2019}
+}
+
+% Cascade R-CNN
+@INPROCEEDINGS{cascade,
+  author={Cai, Zhaowei and Vasconcelos, Nuno},
+  booktitle={2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 
+  title={Cascade R-CNN: Delving Into High Quality Object Detection}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={6154-6162},
+  keywords={Detectors;Object detection;Proposals;Training;Computer architecture;Task analysis;Noise measurement},
+  doi={10.1109/CVPR.2018.00644}
+}
+
 % camera trap
 @INPROCEEDINGS{thangaraj2023,
   author={Thangaraj, Rajasekaran and Rajendar, Sivaramakrishnan and M, Sanjith and K, Rithick Saran and Sasikumar, Sudev and L, Chandhru},
@@ -423,7 +498,7 @@ camera trap
 % OSR
 @INPROCEEDINGS{mahdavi2021survey,
   author={Mahdavi, Atefeh and Carvalho, Marco},
-  booktitle={2021 IEEE Fourth International Conference on Artificial Intelligence and Knowledge Engineering (AIKE)}, 
+  booktitle={IEEE Fourth International Conference on Artificial Intelligence and Knowledge Engineering (AIKE)}, 
   title={A Survey on Open Set Recognition}, 
   year={2021},
   volume={},
@@ -489,6 +564,34 @@ url={https://openreview.net/forum?id=5hLP5JY9S2d}
   month     = {June},
   year      = {2022},
   pages     = {7171-7180}
+}
+
+% FSOSR
+@INPROCEEDINGS{wang2023,
+  author={Wang, Haoyu and Pang, Guansong and Wang, Peng and Zhang, Lei and Wei, Wei and Zhang, Yanning},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={Glocal Energy-based Learning for Few-Shot Open-Set Recognition}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={7507-7516},
+  keywords={Measurement;Computer vision;Feature extraction;Pattern recognition;Task analysis;Standards;Recognition: Categorization;detection;retrieval},
+  doi={10.1109/CVPR52729.2023.00725}
+}
+
+% FSOSR
+@INPROCEEDINGS{che2023,
+  title     = {Boosting Few-Shot Open-Set Recognition with Multi-Relation Margin Loss},
+  author    = {Che, Yongjuan and An, Yuexuan and Xue, Hui},
+  booktitle = {Thirty-Second International Joint Conference on Artificial Intelligence, {IJCAI-23}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Edith Elkind},
+  pages     = {3505--3513},
+  year      = {2023},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2023/390},
+  url       = {https://doi.org/10.24963/ijcai.2023/390},
 }
 
 % ViT

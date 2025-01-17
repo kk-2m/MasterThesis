@@ -5,7 +5,7 @@ on:
     branches:
       - chapter2
     paths:
-      - 01_draft/chapter2/chapter2_v1.tex # TeXファイル名が異なるなら各自変更．以降も複数箇所変更の必要あり．
+      - 01_draft/chapter2/chapter2_v2.tex # TeXファイル名が異なるなら各自変更．以降も複数箇所変更の必要あり．
 
 jobs:
   build_latex:
@@ -29,19 +29,19 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with: 
-          root_file: chapter2_v1.tex
+          root_file: chapter2_v2.tex
           working_directory: 01_draft/chapter2
           args: -r ../../.latexmkrc
           post_compile: "latexmk -c"
       
       - name: Rename PDF file # ファイル名競合回避
-        run: mv 01_draft/chapter2/chapter2_v1.pdf 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
+        run: mv 01_draft/chapter2/chapter2_v2.pdf 01_draft/chapter2/chapter2_v2_${{ steps.short-sha.outputs.sha }}.pdf
       
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
+          path: 01_draft/chapter2/chapter2_v2_${{ steps.short-sha.outputs.sha }}.pdf
           zip: false
       
       - name: Create Release
@@ -62,6 +62,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # "CUSTOM_GITHUB_TOKEN"はお好きな名前をどうぞ
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
-          asset_name: 01_draft/chapter2/chapter2_v1_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_path: ${{ github.workspace }}/01_draft/chapter2/chapter2_v2_${{ steps.short-sha.outputs.sha }}.pdf
+          asset_name: 01_draft/chapter2/chapter2_v2_${{ steps.short-sha.outputs.sha }}.pdf
           asset_content_type: application/pdf
