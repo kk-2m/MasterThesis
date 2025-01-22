@@ -56,12 +56,27 @@
 \題目={メタ学習に基づくInfrared Few-shot Open-set Recognitionを考慮した動物分類}
 \学籍番号={K623009}           %%%  学籍番号
 \英文題目={Animal Classification Considering \\ Infrared Few-shot Open-set Recognition \\ Based on Meta-learning}
-\英文氏名={Koki Kishi!}
+\英文氏名={Koki Kishi}
 
 \newpage
-%英文のアブストラクトを書く場合．卒業論文ならコメントアウト．
+%英文のアブストラクトを書く場合．(200語程度)
 \begin{abstract}\hspace{0.5zw}
-  
+  Biodiversity plays an essential role in the circulation of materials and resources on Earth. 
+  However, as ecosystem degradation caused by human activities progresses, the importance of effective ecosystem monitoring is increasing globally. 
+  As a monitoring method, surveillance using camera traps is attracting attention as a cost-effective and efficient approach. 
+  In particular, there are high expectations for the use of infrared cameras that can take pictures at night, 
+  but there are issues with the classification of infrared images, such as the lack of color information and insufficient training data.
+
+  This paper proposes the novel Infrared Few-shot Open-set Recognition (IFOR) framework for wildlife monitoring using camera traps.
+  The framework aims to simultaneously achieve the classification of registered animal species and the detection of unregistered animals using only limited infrared image data. 
+  To solve these IFOR problems, we focused on three approaches: feature extraction, transfer learning, and meta-learning.
+  Furthermore, in order to improve multi-class classification accuracy for unregistered animal species, 
+  we introduced k-means loss and Between-Class loss to minimize intra-class variance and maximize inter-class variance. 
+  The experiments utilized datasets from different regions and assessed the model performance under domain shift conditions.
+
+  % The results of this research provide important insights for developing effective wildlife monitoring systems under limited data conditions, 
+  % and are expected to be used as a foundation for developing practical machine learning models in ecological research. 
+  The results of this research contribute to the advancement of ecosystem monitoring technology aimed at sustainable coexistence with wildlife.
 \end{abstract}
 
 \begin{comment}
