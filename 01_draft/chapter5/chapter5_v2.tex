@@ -1,0 +1,131 @@
+% History
+% 12/06/2024  (岸)	修論下書き用texファイル作成
+% 12/12/2024  (岸)	フォントサイズを11pt, 行間を1.5に設定
+% コンパイルの仕方
+% 		uplatex chapter1_v1.tex
+% 		upbibtex chapter1_v1
+% 		uplatex chapter1_v1.tex
+% 		uplatex chapter1_v1.tex
+% 		dvipdfmx chapter1_v1.dvi
+
+% フォントサイズを11ptに設定
+\documentclass[a4paper,11pt,nomag]{jsreport}
+
+\usepackage[dvipdfm,truedimen]{geometry}
+\geometry{top=22mm,bottom=22mm,left=22mm,right=22mm}
+%% jsclasses系で文字サイズ11pt や 12pt をクラスオプションに指定すると，
+%% 長さが拡大されるため，nomagオプションを併用している．
+%% https://oku.edu.mie-u.ac.jp/~okumura/jsclasses/ のFAQをよく読むこと．
+
+%\usepackage{layout}
+%\usepackage[utf8]{inputenc} %不要かも
+\usepackage[T1]{fontenc} %utf8フォントエンコーディング指定
+\usepackage{lmodern} % 11pt, nomag を使っているので
+% CloudLaTeX の場合は下の1行を有効にすること
+% \AtBeginDvi{\special{pdf:mapfile ptex-ipaex.map}}
+\usepackage{array}
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}  
+\newcommand{\bvline}[1]{\vrule width #1}
+\renewcommand{\baselinestretch}{1.5} % 教授が赤修正を入れやすいように行間を1.5に設定
+\usepackage[singlespacing]{setspace} % 部分的な行間調整パッケージ．表など行間を1.5倍にしたくないところに使う．
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage[dvipdfmx]{graphicx} % dvipdfmx を前提としている
+\usepackage[dvipdfmx]{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{here} % 図表の位置決め用
+\usepackage{amsmath,amssymb}% 数式用
+\usepackage{bbm}
+\usepackage{bm} % 数式太字
+\usepackage{url}      % URL等記載用．\verbより便利
+\usepackage{enumerate}
+\usepackage{midpage}
+% ハイパーリンク
+\usepackage[dvipdfmx,breaklinks=true,colorlinks]{hyperref} % dvipdfmxは日本語のときのみかく
+\usepackage{pxjahyper} % (u)pLaTeXのときのみかく
+
+% サブキャプションのフォーマットを調整
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[subfigure]{labelformat=simple, labelsep=space}
+
+\begin{document}
+\setcounter{chapter}{5}
+
+\chapter*{結論}
+
+本論文では，限られた赤外線画像を用いた効果的な野生動物\textcolor{red}{モニタリング}のための新たな概念として，Infrared Few-shot Open-set Recognition (IFOR)を提案した．
+本研究では，最小限の赤外線画像データを用いて，モデルに登録された動物の分類と未登録の動物の識別を実現するIFORフレームワークを開発した．
+
+包括的な分析により得られた主要な知見として，まず特徴抽出器について，ViTは赤外線画像の分類においてCNN(ResNet18)と比較して優れた性能を示し，\textcolor{red}{分類}精度が5.2\%向上した．
+これは，ViTの大域的な注意機構が赤外線野生動物画像における特徴抽出において高い有効性を持つことを示唆している．
+一方で，基盤モデルであるCLIPはViT-Baseと比較して有効性を示せなかった．
+この結果を踏まえ，今後の研究課題として，テキストエンコーダやプロンプトを用いた学習フレームワークの検証が必要である．
+これにより，IFORにおけるテキストと画像のペアを用いた対象学習の有効性を理論的かつ実験的に明らかにすることが可能となる．
+転移学習については，ImageNetによる事前学習が，フラクタル\textcolor{red}{画像}ベースの事前学習及び事前学習なしの場合と比較して一貫して優れた性能を示した．
+このことから，自然画像から学習した\textcolor{red}{特徴抽出器}が赤外線野生動物分類タスクに対して高い汎化性能を持つことを示している．
+メタ学習に関しては，提案したメタ学習アプローチが従来の学習手法であるミニバッチ学習と比較して分類精度を11.1\%向上させ，未登録クラス\textcolor{red}{に対する}検出性能であるAUROCを7.7\%改善した．
+この結果は，データ数が限られた条件下において，モデルを新規クラスに適応させる際のメタ学習の有効性を実証している．
+未登録クラスの多クラス分類においては，k-means損失とBetween-Class損失の導入により既存のPEELERモデルと比較して，登録クラスと未登録クラスを含む全体の分類精度(All Accuracy)を改善した．
+これらの実験により，クラスタリングに基づく損失関数が未登録クラスの多クラス分類に対して有効であることが実証された．
+
+また，異なる地域から収集された学習用データセットと評価用データセットを用いることにより，\textcolor{red}{ドメインシフト下}におけるモデルの適応性に関する知見を得た．
+さらに，学習に用いるサポートデータの\textcolor{red}{Shot}数の増加がモデルの分類性能に及ぼす影響を検証し，\textcolor{red}{Shot}数を増やすことで分類精度が大幅に向上することを明らかにした．
+これらの知見は，夜間環境という困難な条件下における野生動物モニタリング技術の進展に貢献するとともに，生態学の研究において直面する限られたデータ条件下でも適用可能な，
+効率的かつ汎用性の高い機械学習モデルの開発に向けた基盤となる成果を提供している．
+
+野生動物モニタリングの実用化に向けた今後の課題として，本研究で取り組んだ画像分類に加えて，物体検出手法の開発が挙げられる．
+特に，少数の赤外線画像データという制約下においても，画像内の動物領域を高精度に検出可能な手法の開発が急務である．
+また，将来の研究における有望な方向性として，IFORフレームワークの性能を潜在的に向上させる多段階転移学習アプローチが挙げられる．
+具体的には，ImageNetのような大規模データセットにより事前学習されたモデルを基盤とし，Snapshot Serengetiのような大規模なカメラトラップ画像データセットを用いた中間的なファインチューニングを経て，
+最終段階で，ターゲットタスクであるCCTやWCSのような小規模な赤外線画像データセットを用いたメタ学習を行うアプローチである．
+
+\chapter*{\textcolor{red}{謝辞}}
+
+本研究を進めるにあたり，全過程を通じて御助言，御指導を頂きました，滝本裕則教授に深謝の意を表します．
+
+また，本研究及び本論文の執筆において，様々な面で御協力を頂きました，金川明弘\textcolor{red}{名誉}教授に感謝申し上げます．
+
+そして，本研究の遂行にあたり日頃から御討論，御協力を頂いた数理情報メディア工学研究室の皆様に厚く御礼申し上げます．
+\textcolor{red}{特に，本研究の基盤となる研究を進められた伊藤嵐丸氏，岸本昌子氏に感謝の意を表します．}
+% 本研究は，伊藤嵐丸氏，岸本昌子氏による先行研究を基盤としており，学会発表を通じて多くの知見を得ることができました．
+% ここに感謝の意を表します．
+
+\chapter*{研究業績}
+
+\subsection*{学術雑誌への掲載論文}
+\begin{enumerate}
+  \item 北山晃生, 岸孝樹, 古賀荘翠, 滝本裕則, 金川明弘, ``室内での見守り実現に向けた全方位画像に対する複数人物追跡,'' 日本福祉工学会誌, Vol.~26, No.~2, pp.~2-8（7ページ）.
+  \item Koki Kishi, Ranmaru Ito, Sulfayanti Faharuddin Situju, Hironori Takimoto, and Akihiro Kanagawa, ``Animal Classification Considering Infrared Few-shot Open-set Recognition,'' \mbox{\textit{Cogent Engineering}}, (Accepted).
+\end{enumerate}
+
+\subsection*{国際会議での研究発表}
+\begin{enumerate}
+  \item ◎Koki Kishi, Masako Kishimoto, Sulfayanti Faharuddin Situju, Hironori Takimoto and Akihiro Kanagawa, ``Few-Shot Learning for CNN-based Animal Classification in Camera Traps using an Infrared Camera,'' In \textit{Proceedings of the 10th IIAE International Conference on Intelligent Systems and Image Processing 2023 (ICISIP2023)}, pp.~11-17（7ページ）, 2023年9月.
+  \item ◎Koki Kishi, Ranmaru Ito, Sulfayanti Faharuddin Situju, Hironori Takimoto and Akihiro Kanagawa, ``Few-Shot Learning for Animal Classification in Camera Traps using an Infrared Camera,'' In \textit{Proceedings of the SICE Festival 2024 with Annual Conference (SICE FES 2024)}, WeBT7.7, pp.~420-423 （4ページ）, 2024年8月.
+\end{enumerate}
+
+\subsection*{国内学会（全国レベル）での研究発表}
+\begin{enumerate}
+  \item ◎古賀荘翠, 北山晃生, 岸孝樹, 滝本裕則, 金川明弘, ``複数物体追跡におけるIDスイッチ抑制のためのMotion SORTの提案,'' 第28回 パターン計測シンポジウム, PM108\_04（4ページ）, 2023年11月.
+  \item ◎岸孝樹, 伊藤嵐丸, 植田諒大, Sulfayanti Faharuddin Situju, 滝本裕則, ``Infrared Few-shot Open-set Recognitionを考慮したクラスタリングとメタ学習による動物分類,'' 第29回 パターン計測シンポジウム, PM109\_02（8ページ）, 2024年11月.
+\end{enumerate}
+
+\subsection*{国内学会（支部・県レベル）での研究発表}
+\begin{enumerate}
+  \item ◎岸孝樹, 伊藤嵐丸, 滝本裕則, 金川明弘, ``赤外線カメラトラップにおける動物分類のための少数データ学習,'' 第26回IEEE広島支部学生シンポジウム (IEEE HISS 26th) 論文集, TP-A-25, pp.~91-94（4ページ）, 2024年11月.
+\end{enumerate}
+
+\subsection*{受賞}
+\begin{enumerate}
+  \item The 10th IIAE International Conference on Intelligent Systems and Image Processing 2023 Best Paper Award, 2023年9月（対象は上記の国際会議での研究発表(1)）.
+  \item 計測自動制御学会 計測部門 パターン計測部会 令和6年度優秀論文賞, 2024年11月（対象は上記の国内学会（全国レベル）での研究発表(2)）.
+  \item IEEE広島支部学生シンポジウム (HISS) 優秀研究賞, 2024年11月（対象は上記の国内学会（支部・県レベル）での研究発表(1)）.
+\end{enumerate}
+
+% ここから参考文献bibtexの設定
+\bibliographystyle{../kishiIEEEtr}
+\bibliography{../references}
+
+\end{document}
