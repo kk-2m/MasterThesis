@@ -9,6 +9,45 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage[dvipdfm,truedimen]{geometry}
+\geometry{top=22mm,bottom=22mm,left=22mm,right=22mm}
+%% jsclasses系で文字サイズ11pt や 12pt をクラスオプションに指定すると，
+%% 長さが拡大されるため，nomagオプションを併用している．
+%% https://oku.edu.mie-u.ac.jp/~okumura/jsclasses/ のFAQをよく読むこと．
+
+\usepackage[T1]{fontenc} %utf8フォントエンコーディング指定
+\usepackage{lmodern} % 11pt, nomag を使っているので
+
+\usepackage{array}
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}  
+\newcommand{\bvline}[1]{\vrule width #1}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage[dvipdfmx]{graphicx} % dvipdfmx を前提としている
+\usepackage[dvipdfmx]{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{here} % 図表の位置決め用
+\usepackage{amsmath,amssymb}% 数式用
+\usepackage{bbm}
+\usepackage{bm} % 数式太字
+\usepackage{url}      % URL等記載用．\verbより便利
+\usepackage{enumerate}
+\usepackage{midpage}
+\usepackage{comment} % コメント用パッケージ
+% ハイパーリンク
+\usepackage[dvipdfmx,breaklinks=true,colorlinks]{hyperref} % dvipdfmxは日本語のときのみかく
+\usepackage{pxjahyper} % (u)pLaTeXのときのみかく
+% 目次のページだけ黒色に
+\AtBeginDocument{
+    \addtocontents{toc}{\protect\hypersetup{linkcolor=black}}
+}
+
+% サブキャプションのフォーマットを調整
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\captionsetup[subfigure]{labelformat=simple, labelsep=space}
+
 \pagestyle{plain}
 
 \setcounter{tocdepth}{3}
@@ -152,7 +191,9 @@
 
 \renewcommand{\appendixname}{付録}
 
-\newcommand{\tocack}{\addcontentsline{toc}{chapter}{謝辞}}
+\newcommand{\tocack}{\newpage\phantomsection\addcontentsline{toc}{chapter}{謝辞}}
+
+\newcommand{\tocpub}{\newpage\phantomsection\addcontentsline{toc}{chapter}{研究業績}}
 
 %
 %  thebiliography環境の再定義
@@ -161,6 +202,7 @@
 \renewcommand{\bibname}{参考文献}
 \renewenvironment{thebibliography}[1]
 {\chapter*{\bibname\@mkboth{\bibname}{\bibname}}%
+  %  \addcontentsline{toc}{chapter}{\bibname}%
    \list{\@biblabel{\@arabic\c@enumiv}}%
         {\settowidth\labelwidth{\@biblabel{#1}}%
          \leftmargin\labelwidth
@@ -178,7 +220,7 @@
     {\@latex@warning{Empty `thebibliography' environment}}%
    \endlist}
 \newcommand{\tocbib}{%
-  \newpage\addcontentsline{toc}{chapter}{\bibname}%
+  \newpage\phantomsection\addcontentsline{toc}{chapter}{\bibname}%
   \markboth{\bibname}{\bibname}}
 
 %
