@@ -81,7 +81,7 @@
 \begin{table*}[tbp]
   \centering
 	\caption{赤外線画像に対する各特徴抽出器と転移学習の組み合わせによる実験結果}
-  \label{tbl:classification}
+  \label{tbl:detection}
 	\small
   \begin{tabular}{c||c|c|c|c|c|c}
     \hline
@@ -97,7 +97,7 @@
 \begin{table*}[tbp]
   \centering
   \caption{ImageNet転移学習を用いたViTによる各学習方法の赤外線画像に対する実験結果}
-  \label{tbl:detection}
+  \label{tbl:meta}
 	\small
   \begin{tabular}{c||c|c|c}
     \hline
@@ -166,7 +166,7 @@ IFORフレームワークにおいて，k-means損失は下記のように定義
 IFORにおける実験結果を表 \ref{tbl:detection}に示す．
 表から，ViTはResNet18に比べて赤外線画像の分類精度が優れていることが分かる．
 さらに，ResNet18とViTは，ImageNetによる転移学習を利用した場合に最も高い精度を達成した．
-このような傾向が見られた背景として，フラクタル画像のドメインが自然画像とは異なるため，赤外線や可視光による動物画像では効果が現れなかった可能性がある．
+このような傾向が見られた背景として，フラクタル画像のドメインが自然画像とは異なるため，赤外線動物画像では効果が現れなかった可能性がある．
 
 次に，IFORフレームワークにおけるメタ学習の有効性を検証した実験結果を表 \ref{tbl:meta}に示す．
 表 \ref{tbl:meta}から，メタ学習手法であるPEELERは従来の学習方法や学習なしのシナリオと比較して，精度とAUROCの両方を有意に改善したことが分かる．
@@ -180,7 +180,7 @@ IFORにおける実験結果を表 \ref{tbl:detection}に示す．
   \centering
   \vspace{-3.5mm}
 	\caption{k-means損失とBC損失のアブレーション結果}
-  \label{tbl:meta}
+  \label{tbl:classification}
 	\small
 	\begin{tabular}{c||c|c||c|c} \hline
 		学習方法                                        &    KM   &      BC      &  Acc. (\%) &      AUROC     \\ \hline\hline
