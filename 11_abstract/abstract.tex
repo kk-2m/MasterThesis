@@ -169,21 +169,20 @@ IFORにおける実験結果を表 \ref{tbl:detection}に示す．
 % ------
 \begin{table}[tbp]
   \centering
-  \vspace{-3.5mm}
 	\caption{k-means損失とBC損失のアブレーション結果}
   \label{tbl:classification}
 	\small
+  \setlength{\tabcolsep}{4.5pt}
 	\begin{tabular}{c||c|c||c|c} \hline
-		学習方法                                        &    KM   &      BC      &  Acc. (\%) &      AUROC     \\ \hline\hline
-		\multirow{4}{*}{PEELER}                                &              &              &      38.1     & \textbf{0.497} \\ \cline{2-5}
-																					                 & $\checkmark$ &              &      38.1     & \textbf{0.497} \\ \cline{2-5}
-																					                 &              & $\checkmark$ &      38.1     & \textbf{0.497} \\ \cline{2-5}
-																					                 & $\checkmark$ & $\checkmark$ &      38.7     &      0.496     \\ \hline
-		\multirow{3}{*}{\shortstack[c]{PEELER\\(w/o 分類損失)}} & $\checkmark$ &              &      39.2     &       0.496     \\ \cline{2-5}
-																					                 &              & $\checkmark$ & \textbf{39.3} &      0.496      \\ \cline{2-5}
-																					                 & $\checkmark$ & $\checkmark$ &      39.2     &      0.496      \\ \hline
+		学習方法                                                &       KM     &      BC      &    Acc. (\%)  &   AUROC (\%)   \\ \hline\hline
+		\multirow{4}{*}{PEELER}                                &              &              &      38.1     & \textbf{49.7} \\ \cline{2-5}
+																					                 & $\checkmark$ &              &      38.1     & \textbf{49.7} \\ \cline{2-5}
+																					                 &              & $\checkmark$ &      38.1     & \textbf{49.7} \\ \cline{2-5}
+																					                 & $\checkmark$ & $\checkmark$ &      38.7     &      49.6     \\ \hline
+		\multirow{3}{*}{\shortstack[c]{PEELER\\(w/o 分類損失)}} & $\checkmark$ &              &      39.2     &       49.6     \\ \cline{2-5}
+																					                 &              & $\checkmark$ & \textbf{39.3} &      49.6      \\ \cline{2-5}
+																					                 & $\checkmark$ & $\checkmark$ &      39.2     &      49.6      \\ \hline
 	\end{tabular}
-  % \vspace{-5mm}
 \end{table}
 % ------
 本実験では，距離学習に基づくFSL損失とOSR損失に加え，分類損失を組み合わせた既存のPEELERフレームワークをベースラインとし，k-means損失，BC損失の有効性を検証した．
