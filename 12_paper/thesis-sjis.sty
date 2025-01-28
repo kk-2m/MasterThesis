@@ -36,10 +36,16 @@
 \usepackage{enumerate}
 \usepackage{midpage}
 \usepackage{comment} % コメント用パッケージ
+
 % ハイパーリンク
-\usepackage[dvipdfmx,breaklinks=true,colorlinks]{hyperref} % dvipdfmxは日本語のときのみかく
+\usepackage[%
+dvipdfmx,% 欧文ではコメントアウト
+breaklinks=true,% リンクテキストが長い場合に自動で改行
+colorlinks=true,% リンクに色をつけるか(true)，枠をつけるか(false)
+% hidelinks% リンクに色や枠をつけない，印刷の時のみ書く
+]{hyperref} % dvipdfmxは日本語のときのみかく
 \usepackage{pxjahyper} % (u)pLaTeXのときのみかく
-% 目次のページだけ黒色に
+% 目次のページだけ黒色に(hidelinksをつける時はコメントアウト)
 \AtBeginDocument{
     \addtocontents{toc}{\protect\hypersetup{linkcolor=black}}
 }
