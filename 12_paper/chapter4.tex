@@ -54,7 +54,7 @@ IFOR手法の開発において，地域間のドメインシフトを考慮し�
 
 \begin{table}[tbp]
   \centering
-  \caption{学習用データセット (WCS Camera Traps) データセットの詳細}
+  \caption{学習用 (WCS Camera Traps) データセットの詳細}
   \label{tbl:wcs}
   \begin{tabular}{c|c|c}
       \hline
@@ -302,7 +302,7 @@ CLIPの学習ではテキストの特徴ベクトルと画像の特徴ベクト�
   \small
   \setlength{\tabcolsep}{4pt} % 列幅のパディングをdefaltの6ptから4ptに変更
   \begin{tabular}{c||c|c||c|c|c|c} \hline
-    学習フレームワーク                                        &    k-means   &      BC      & Closed Accuracy (\%) & Open Accuracy (\%) & All Accuracy (\%) &      AUROC     \\ \hline\hline
+    学習フレームワーク                                        &    k-means   &      BC      & Closed Accuracy (\%) & Open Accuracy (\%) & All Accuracy (\%) &   AUROC (\%)  \\ \hline\hline
     \multirow{4}{*}{PEELER}                                &              &              &         38.3         &        37.8        &        38.1       & \textbf{49.7} \\ \cline{2-7}
                                                            & $\checkmark$ &              &         38.3         &        37.8        &        38.1       & \textbf{49.7} \\ \cline{2-7}
                                                            &              & $\checkmark$ &         38.3         &        37.8        &        38.1       & \textbf{49.7} \\ \cline{2-7}
@@ -319,7 +319,7 @@ ImageNetで事前学習済みのViTモデル \texttt{deit\_tiny\_patch16\_224}�
 
 結果より，既存手法のPEELERにk-means損失，または，BC損失を個別に組み合わせた場合，モデルの分類精度はベースラインとほぼ同等の性能であった．
 一方，k-means損失とBC損失の両方をベースラインのPEELERに組み合わせることによって，ベースラインより高い性能を達成することが確認された．
-次に，分類損失を用いないPEELERにk-means損失及びBC損失を組み合わせた結果を確認すると，k-means損失のみ，BC損失のみ，
+次に，分類損失を用いないPEELERにk-means損失またはBC損失を組み合わせた結果を確認すると，k-means損失のみ，BC損失のみ，
 k-means損失及びBC損失を組み合わせた場合のいずれにおいてもベースラインの精度より高くなることが確認された．
 この結果は，IFORの5-Way, 1-Shot問題において，分類損失を用いずにk-means損失やBC損失を単体で用いることの有効性を示している．
 

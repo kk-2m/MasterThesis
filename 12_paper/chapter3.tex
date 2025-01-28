@@ -112,7 +112,7 @@ FDSLでは，数式によって生成されたフラクタル幾何画像を用�
   \hfill
   \begin{subfigure}[b]{0.45\linewidth}
     \centering
-    \includegraphics[height=0.9\linewidth, keepaspectratio]{image/fdsl.png}
+    \includegraphics[height=0.9\linewidth, keepaspectratio]{image/fdsl.eps}
     \caption{FDSLの画像例}
     \label{fig:fdsl}
   \end{subfigure}
@@ -150,7 +150,7 @@ ProtoNetの概要を図 \ref{fig:protonet}に示す．
 \end{figure}
 % 
 ProtoNetでは，モデルに登録するクラスセットであるサポートセット (support-set) と，サポートセットを評価するためのクエリセット (query-set) を用いて学習を行う．
-ProtoNetは，入力データと各クラスのプロトタイプとの距離に基づき分類のための特徴空間を学習することにより，少数データにおける分類を実現する．
+ProtoNetは，入力データと各クラスのプロトタイプとの距離に基づいて分類のための特徴空間を学習し，少数データにおける分類を実現する．
 プロトタイプはサポートセットの埋め込みベクトルの平均として定義される．
 具体的に，サポートデータは各クラスのプロトタイプを中心としたクラスタを形成するような空間に埋め込まれ，
 分類時には，クエリデータの埋め込みベクトルに最も近いプロトタイプを持つクラスが予測クラスとして分類される．
